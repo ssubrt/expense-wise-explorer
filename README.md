@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
 
-## Project info
+# ExpenseWise Explorer
 
-**URL**: https://lovable.dev/projects/8afa6567-b9ef-427c-bf52-60c353ed005b
+A React Native Expo app for tracking and splitting expenses with friends.
 
-## How can I edit this code?
+## Getting Started
 
-There are several ways of editing your application.
+### Prerequisites
 
-**Use Lovable**
+- Node.js (v14 or higher)
+- npm or yarn
+- Expo CLI (`npm install -g expo-cli`)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8afa6567-b9ef-427c-bf52-60c353ed005b) and start prompting.
+### Installation
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm install
+# or
+yarn install
 ```
 
-**Edit a file directly in GitHub**
+### Running the app
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+expo start
+```
 
-**Use GitHub Codespaces**
+### Building APK
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To build an APK for Android, you'll need to use EAS Build (the recommended approach) or expo build (deprecated):
 
-## What technologies are used for this project?
+#### Using EAS Build (Recommended):
 
-This project is built with:
+1. Install EAS CLI:
+```bash
+npm install -g eas-cli
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+2. Log in to your Expo account:
+```bash
+eas login
+```
 
-## How can I deploy this project?
+3. Configure the build:
+```bash
+eas build:configure
+```
 
-Simply open [Lovable](https://lovable.dev/projects/8afa6567-b9ef-427c-bf52-60c353ed005b) and click on Share -> Publish.
+4. Build the APK:
+```bash
+eas build -p android --profile preview
+```
 
-## Can I connect a custom domain to my Lovable project?
+5. Once the build is complete, you can download the APK from the Expo website or use the provided URL.
 
-Yes it is!
+#### Using expo build (Deprecated):
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+expo build:android -t apk
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Uploading to Google Drive
+
+1. Go to [Google Drive](https://drive.google.com)
+2. Click on "+ New" and select "File upload"
+3. Select your APK file from the build output directory
+4. Wait for the upload to complete
+5. Right-click on the file and select "Get link"
+6. Make sure to set the permissions to "Anyone with the link can view"
+7. Copy the link to share your APK with others
+
+## Features
+
+- Create and manage expense groups
+- Add expenses with detailed information
+- Split expenses equally or with custom amounts
+- Track balances between group members
+- Persistent data storage
+
