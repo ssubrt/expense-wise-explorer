@@ -119,7 +119,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📬 Contact
 
-For any questions or suggestions, please open an issue or contact [your-subratgangwar03@gmail.com](mailto:subratgangwar03@gmail.com).
+For any questions or suggestions, please open an issue or contact [subratgangwar03@gmail.com](mailto:subratgangwar03@gmail.com).
 
 ---
 
