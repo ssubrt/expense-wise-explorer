@@ -18,7 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <NavigationContainer>
-        <Stack.Navigator id="AppNavigator" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Index" component={Index} />
           <Stack.Screen name="GroupDetails" component={GroupDetails} initialParams={{ id: undefined }} />
           <Stack.Screen name="NotFound" component={NotFound} />
