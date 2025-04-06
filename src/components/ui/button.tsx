@@ -1,6 +1,8 @@
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
+import { Pressable, Text, View } from "react-native"
 
 import { cn } from "@/lib/utils"
 
@@ -36,18 +38,25 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean;
+  onPress?: () => void; // Add onPress for React Native compatibility
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, children, onClick, onPress, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    // Handle both onClick and onPress for cross-platform compatibility
+    const handlePress = onPress || onClick;
+    
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        onClick={handlePress}
         {...props}
-      />
+      >
+        {children}
+      </Comp>
     )
   }
 )
