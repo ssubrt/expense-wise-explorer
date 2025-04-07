@@ -1,6 +1,4 @@
 
-import { registerRootComponent } from 'expo';
-import App from './src/App';
-
-// Register the root component
-registerRootComponent(App);
+// This file serves as an entry point for the application
+// The main functionality is now in src/main.tsx
+import './src/main.tsx';
